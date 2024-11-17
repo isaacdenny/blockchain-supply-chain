@@ -7,6 +7,38 @@ Designing a blockchain-based supply chain traceability system involves creating 
 
 We want to create a supply chain simulation that stores its events (i.e. "Product B delivered to Warehouse 334") in decentralized blockchain. The blockchain uses hashing to verify new nodes and chains. 
 
+### Layout and Usage
+
+- [ ] `src/`: source code for supply chain simulation
+- [ ] `tests/`: unit tests and other relevant testing files
+
+Example usage:
+
+```
+// Main program/driver file "main.cpp"
+
+#include "supplychain.h"
+
+int main(int argc, char* argv[]) {
+    // takes in command line arguments for number of products, threads, etc...
+
+    SupplyChainController controller(...simulation arguments);
+
+    controller.start(); // starts the simulation
+
+    // code for outputting results to file
+}
+```
+
+The main file should be responsible for starting up the simulation and taking in any arguments (great for testing). With the simulation running, we should be able to run other scripts that attack the blockchain in different ways, forcing our simulation to handle it accordingly via different methods: 
+
+***RESEARCH METHODS***
+1. Quarantining products
+2. Forking the blockchain
+3. Rolling back to safe state
+4. ...
+
+
 ### Node Design:
 
 In a blockchain-based supply chain, a "node" represents a participant in the network. Each node interacts with the blockchain to verify transactions, store data, and propagate updates across the network.
