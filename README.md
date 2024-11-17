@@ -8,9 +8,6 @@ Designing a blockchain-based supply chain traceability system involves creating 
 We want to create a supply chain simulation that stores its events (i.e. "Product B delivered to Warehouse 334") in decentralized blockchain. The blockchain uses hashing to verify new nodes and chains. 
 
 ![Flow of transactions in blockchain supply-chain](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/blockchain-logistic.png)
-![More descriptions on process of blockchain](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/blockchain-for-supply-chain.png)
-![Simple blockchain supply-chain diagram](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/Blockchain-in-the-supply-chain-2.png)
-
 
 ### Layout and Usage
 
@@ -43,6 +40,7 @@ The main file should be responsible for starting up the simulation and taking in
 3. Rolling back to safe state
 4. ...
 
+![More descriptions on process of blockchain](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/blockchain-for-supply-chain.png)
 
 ### Node Design:
 
@@ -94,6 +92,8 @@ Key Functions:
 Data Structure:
 
     Transaction Class: Stores details of a transaction, including product ID, sender, receiver, timestamp, and a digital signature.
+
+![Simple blockchain supply-chain diagram](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/Blockchain-in-the-supply-chain-2.png)
 
 ## Testing
 
