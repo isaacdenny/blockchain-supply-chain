@@ -47,7 +47,7 @@ The main file should be responsible for starting up the simulation and taking in
 What does our program need to do to?
 
 1. Simulate a supply chain
-2. Generate a blockchain log of each transaction
+2. Generate a blockchain log of each transaction - [Javascript BlockChain Videos](https://www.youtube.com/watch?v=zVqczFZr124&list=PLggJAWhpyrRxKmetiP3RdTa7VAbGaXWub)
 3. Validate the blockchain record (check for data tampering)
 
 ![Simple blockchain supply-chain diagram](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/Blockchain-in-the-supply-chain-2.png)
