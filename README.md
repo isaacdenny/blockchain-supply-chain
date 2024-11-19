@@ -42,6 +42,38 @@ The main file should be responsible for starting up the simulation and taking in
 
 ![More descriptions on process of blockchain](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/blockchain-for-supply-chain.png)
 
+## Project Proposal
+
+- [ ] Problem Space - Common supply chain failures and security flaws of centralized data systems
+- [ ] Proposed Solution
+      1. Decentralization
+      2. Hashing of id's, transactions, data to 
+
+## Class Structures
+
+### Product
+- id (int)
+- nodesVisited (int)
+
+## SupplyChainNode
+- TBD
+
+## SupplyChainController
+- list of nodes (vector<SupplyChainNode>)
+- list of products (vector<Product>)
+- blockchain (BlockChain)
+- startSimulation()
+
+## Blocks
+- timestamp
+- data (product #, from, to)
+- previousHash (using any commercial)
+
+## BlockChain
+- list of blocks (vector<Block>)
+- addBlock()
+- validateChain()
+
 ## MVP
 
 What does our program need to do to?
