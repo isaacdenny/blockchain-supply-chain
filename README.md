@@ -47,32 +47,8 @@ The main file should be responsible for starting up the simulation and taking in
 - [ ] Problem Space - Common supply chain failures and security flaws of centralized data systems
 - [ ] Proposed Solution
       1. Decentralization
-      2. Hashing of id's, transactions, data to 
-
-## Class Structures
-
-### Product
-- id (int)
-- nodesVisited (int)
-
-## SupplyChainNode
-- TBD
-
-## SupplyChainController
-- list of nodes (vector<SupplyChainNode>)
-- list of products (vector<Product>)
-- blockchain (BlockChain)
-- startSimulation()
-
-## Blocks
-- timestamp
-- data (product #, from, to)
-- previousHash (using any commercial)
-
-## BlockChain
-- list of blocks (vector<Block>)
-- addBlock()
-- validateChain()
+      2. Hashing of id's, transactions, data to be immutable
+- [ ] Feasability - Short classes, low functionality to get things working fast
 
 ## MVP
 
@@ -94,4 +70,27 @@ Things to add to our project if we have time:
 
 ## Program Design
 
-***TODO***
+### Class Structures
+
+#### Product
+- id (int)
+- nodesVisited (int)
+
+#### SupplyChainNode
+- TBD
+
+#### SupplyChainController
+- list of nodes (vector<SupplyChainNode>)
+- list of products (vector<Product>)
+- blockchain (BlockChain)
+- startSimulation()
+
+#### Blocks
+- timestamp
+- data (product #, from, to)
+- previousHash (using any commercial)
+
+#### BlockChain
+- list of blocks (vector<Block>)
+- addBlock()
+- validateChain()
