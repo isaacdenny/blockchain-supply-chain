@@ -80,8 +80,8 @@ Things to add to our project if we have time:
 - TBD
 
 #### SupplyChainController
-- list of nodes (vector<SupplyChainNode>)
-- list of products (vector<Product>)
+- list of nodes (vector SupplyChainNode)
+- list of products (vector Product)
 - blockchain (BlockChain)
 - startSimulation()
 
@@ -91,6 +91,6 @@ Things to add to our project if we have time:
 - previousHash (using any commercial)
 
 #### BlockChain
-- list of blocks (vector<Block>)
+- list of blocks (vector Block)
 - addBlock()
 - validateChain()
