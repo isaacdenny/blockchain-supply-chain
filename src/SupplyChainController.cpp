@@ -11,7 +11,7 @@ SupplyChainController::SupplyChainController(int numNodes) {
 /*
  * Starts the supply chain simulation and generates blockchain
  */
-vector<Product> SupplyChainController::startSimulation(int numProducts) {
+vector<Product> SupplyChainController::runSimulation(int numProducts) {
   // Initialize our products
   vector<Product> products;
   for (int i = 0; i < numProducts; i++) {

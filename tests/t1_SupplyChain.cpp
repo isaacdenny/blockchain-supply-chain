@@ -15,10 +15,12 @@ int main() {
 	
 	vector<SupplyChainNode> nodes = controller.getNodes();
 
+	// use assertions like this to throw errors if something is not as it should be
 	assert(nodes.size() == NUM_NODES);
 
-	vector<Product> products = controller.startSimulation(NUM_PRODUCTS);
+	vector<Product> products = controller.runSimulation(NUM_PRODUCTS);
 
+	// make sure all products are finished (have visited 5 nodes)
 	bool productsFinished = true;
 	for (int i = 0; i < products.size(); i++) {
 		if (products[i].getNodesVisited() != NUM_NODES) {
