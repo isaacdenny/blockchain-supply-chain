@@ -3,7 +3,6 @@
 
 #include <vector>
 #include "Product.h"
-#include "Transaction.h"
 
 using namespace std;
 
@@ -17,7 +16,7 @@ public:
   SupplyChainNode* getNext() { return next; }
   void setId(int id);
   void setNext(SupplyChainNode &node);
-  Transaction handleProduct(Product &p);
+  void handleProduct(Product &p);
 };
 
 #endif

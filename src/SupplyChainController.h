@@ -3,6 +3,7 @@
 
 #include "SupplyChainNode.h"
 #include "Product.h"
+#include "Transaction.h"
 #include <iostream>
 
 using namespace std;

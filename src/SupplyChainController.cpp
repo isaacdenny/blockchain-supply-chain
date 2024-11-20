@@ -27,8 +27,12 @@ vector<Product> SupplyChainController::runSimulation(int numProducts) {
   for (int i = 0; i < nodes.size(); i++) {
     cout << "Node " << i << " handling products" << endl;
     for (int j = 0; j < products.size(); j++) {
-      Transaction t = nodes[i].handleProduct(products[j]);
-      // create a block with the transaction data, timestamp etc... 
+      nodes[i].handleProduct(products[j]);
+      if (i < nodes.size() - 1) {
+        Transaction t(products[i].getId(), nodes[i].getId(),
+                      nodes[i].getNext()->getId());
+        // create a block with the transaction data, timestamp etc...
+      }
     }
   }
   cout << "Simulation finished" << endl;
