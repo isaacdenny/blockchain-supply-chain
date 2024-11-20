@@ -44,11 +44,11 @@ The main file should be responsible for starting up the simulation and taking in
 
 ## Project Proposal
 
-- [ ] Problem Space - Common supply chain failures and security flaws of centralized data systems
-- [ ] Proposed Solution
+- [x] Problem Space - Common supply chain failures and security flaws of centralized data systems
+- [x] Proposed Solution
       1. Decentralization
       2. Hashing of id's, transactions, data to be immutable
-- [ ] Feasability - Short classes, low functionality to get things working fast
+- [x] Feasability - Short classes, low functionality to get things working fast
 
 ## MVP
 
@@ -76,21 +76,28 @@ Things to add to our project if we have time:
 - id (int)
 - nodesVisited (int)
 
+#### Transaction
+- productId (int)
+- nodeFrom (int)
+- nodeTo (int)
+
 #### SupplyChainNode
-- TBD
+- id (int)
+- next (SupplyChainNode*)
+- handleProduct() - returns a transaction
 
 #### SupplyChainController
 - list of nodes (vector SupplyChainNode)
-- list of products (vector Product)
 - blockchain (BlockChain)
-- startSimulation()
+- runSimulation()
 
 #### Blocks
 - timestamp
-- data (product #, from, to)
+- data (Transaction or list of transactions)
 - previousHash (using any commercial)
 
 #### BlockChain
 - list of blocks (vector Block)
+- list of pending transactions (vector Transaction)
 - addBlock()
 - validateChain()
