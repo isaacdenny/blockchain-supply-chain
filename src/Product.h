@@ -4,13 +4,14 @@
 #include <cstdint>
 class Product {
 private:
-  uint64_t id;
-  uint64_t nodesVisited;
+  int id;
+  int nodesVisited;
 
 public:
-  Product(uint64_t id);
-  uint64_t getId() { return id; }
-  uint64_t getNodesVisited() { return nodesVisited; }
+  Product(int id);
+  int getId() { return id; }
+  void setId(int id);
+  int getNodesVisited() { return nodesVisited; }
   void addNodeVisited();
 };
 

@@ -5,6 +5,7 @@
 using namespace std;
 
 #define NUM_NODES 5
+#define NUM_PRODUCTS 100
 
 /*
 *	Unit test to test all values of the SupplyChainController after initialization
@@ -12,21 +13,19 @@ using namespace std;
 int main() {
 	SupplyChainController controller(NUM_NODES);
 	
-	int num1 = controller.getNumNodes();
-	SupplyChainNode* head = controller.getSCHead();
+	vector<SupplyChainNode> nodes = controller.getNodes();
 
-	cout << "getNumNodes(): " << num1 << endl;
-	cout << "getSCHead().getId(): " << head->getId() << endl;
+	assert(nodes.size() == NUM_NODES);
 
-	assert(num1 == NUM_NODES);
-	assert(head->getId() == 0);
+	vector<Product> products = controller.startSimulation(NUM_PRODUCTS);
 
-	int num2 = 0;
-	SupplyChainNode* current = head;
-	while(current != nullptr) {
-		current = current->getNext();
-		num2++;
+	bool productsFinished = true;
+	for (int i = 0; i < products.size(); i++) {
+		if (products[i].getNodesVisited() != NUM_NODES) {
+			productsFinished = false;
+			cout << "Product not finished, id: " << products[i].getId() << " " << products[i].getNodesVisited() << endl;
+		}
 	}
 
-	assert(num2 == NUM_NODES);
+	assert(productsFinished);
 }

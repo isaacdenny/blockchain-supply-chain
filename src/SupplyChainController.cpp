@@ -1,39 +1,38 @@
 #include "SupplyChainController.h"
-#include "SupplyChainNode.h"
 
-SupplyChainController::SupplyChainController(int numNodes)
-    : numNodes(numNodes) {
+SupplyChainController::SupplyChainController(int numNodes) {
   // Initialize supply chain
-  scHead = new SupplyChainNode(0);
-  SupplyChainNode *newNode = nullptr;
-  SupplyChainNode *current = scHead;
-
   for (int i = 0; i < numNodes; i++) {
-    newNode = new SupplyChainNode(i);
-    current->setNext(newNode);
-    current = current->getNext();
-  }
-}
-
-SupplyChainController::~SupplyChainController() {
-  SupplyChainNode *current = scHead;
-  SupplyChainNode *temp = nullptr;
-
-  while (current != nullptr) {
-    temp = current->getNext();
-    delete current;
-    current = temp;
+    SupplyChainNode newNode(i);
+    nodes.push_back(newNode);
   }
 }
 
 /*
  * Starts the supply chain simulation and generates blockchain
  */
-void SupplyChainController::startSimulation() {
-  cout << "NOT IMPLEMENTED" << endl;
+vector<Product> SupplyChainController::startSimulation(int numProducts) {
+  // Initialize our products
+  vector<Product> products;
+  for (int i = 0; i < numProducts; i++) {
+    Product p(i);
+    products.push_back(p);
+  }
+
+  // Move products through simulation -> open to multithreading later
+  for (int i = 0; i < nodes.size(); i++) {
+    cout << "Node " << i << " handling products" << endl;
+    for (int j = 0; j < products.size(); j++) {
+      // Here is where we will want to add a transaction to the blockchain
+      nodes[i].handleProduct(products[j]);
+    }
+  }
+  cout << "Simulation finished" << endl;
+
+  return products;
 }
 
 /*
- * Saves blockchains of each node to one file
+ * Saves blockchain to a file
  */
 void SupplyChainController::saveBlocks() { cout << "NOT IMPLEMENTED" << endl; }

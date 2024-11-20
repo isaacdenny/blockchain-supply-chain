@@ -1,8 +1,12 @@
 #include "Product.h"
 
-Product::Product(uint64_t id) : id(id) { nodesVisited = 0; }
+Product::Product(int id) : id(id), nodesVisited(0) { }
 
 /*
  * When this product visits a node, increment the counter
  */
-void Product::addNodeVisited() { nodesVisited++; }
+void Product::addNodeVisited() { this->nodesVisited++; }
+
+void Product::setId(int id) {
+	this->id = id;
+}

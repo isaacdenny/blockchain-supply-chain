@@ -2,6 +2,7 @@
 #define SIMULATOR_H
 
 #include "SupplyChainNode.h"
+#include "Product.h"
 #include <iostream>
 
 using namespace std;
@@ -12,16 +13,15 @@ using namespace std;
  */
 class SupplyChainController {
 private:
-  int numNodes;
-  SupplyChainNode *scHead;
+  vector<SupplyChainNode> nodes;
   // int numThreads - for multithreading later
   // file saveFile - the file for reading the nodes and blockchains
+  // BlockChain blockChain - reference to a blockchain
 public:
   SupplyChainController(int numNodes); // add overload for saved blockchain file
-  ~SupplyChainController();            // add overload for saved blockchain file
-  int getNumNodes() { return numNodes; }
-  SupplyChainNode *getSCHead() { return scHead; }
-  void startSimulation();
+  int getNumNodes() { return nodes.size(); }
+  vector<SupplyChainNode> getNodes() { return nodes; }
+  vector<Product> startSimulation(int numProducts);
   void saveBlocks();
 };
 
