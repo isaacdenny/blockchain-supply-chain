@@ -6,6 +6,10 @@ SupplyChainController::SupplyChainController(int numNodes) {
     SupplyChainNode newNode(i);
     nodes.push_back(newNode);
   }
+
+  for (int i = 0; i < numNodes - 1; i++) {
+    nodes[i].setNext(nodes[i + 1]);
+  }
 }
 
 /*
@@ -23,8 +27,8 @@ vector<Product> SupplyChainController::runSimulation(int numProducts) {
   for (int i = 0; i < nodes.size(); i++) {
     cout << "Node " << i << " handling products" << endl;
     for (int j = 0; j < products.size(); j++) {
-      // Here is where we will want to add a transaction to the blockchain
-      nodes[i].handleProduct(products[j]);
+      Transaction t = nodes[i].handleProduct(products[j]);
+      // create a block with the transaction data, timestamp etc... 
     }
   }
   cout << "Simulation finished" << endl;

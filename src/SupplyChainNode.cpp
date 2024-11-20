@@ -2,7 +2,12 @@
 
 SupplyChainNode::SupplyChainNode(int id) : id(id) {}
 
-void SupplyChainNode::handleProduct(Product &p) {
+Transaction SupplyChainNode::handleProduct(Product &p) {
   p.addNodeVisited();
-  // maybe build the transaction data here and return it?
+  Transaction t(p.getId(), id, next->getId());
+  return t;
+}
+
+void SupplyChainNode::setNext(SupplyChainNode &node) {
+  this->next = &node;
 }
