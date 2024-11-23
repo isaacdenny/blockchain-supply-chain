@@ -1,5 +1,5 @@
 #include <iostream> // For printing test results to the console
-#include "Blocks.h" // Include the Blocks class for testing
+#include "../src/Block.h" // Include the Blocks class for testing
 
 using namespace std;
 
@@ -9,7 +9,7 @@ void testBlockCreation()
     cout << "Running testBlockCreation..." << endl;
 
     // Create a block with test data
-    Blocks block(1, "Test Transaction", "0000");
+    Block block(1, "Test Transaction", "0000");
 
     // Check if the block's index is correctly initialized
     if (block.getIndex() != 1) 
@@ -55,7 +55,7 @@ void testBlockHashConsistency()
     cout << "Running testBlockHashConsistency..." << endl;
 
     // Create a block with test data
-    Blocks block(2, "Sample Data", "12345");
+    Block block(2, "Sample Data", "12345");
 
     // Store the block's initial hash
     string initialHash = block.getHash();
@@ -76,7 +76,7 @@ void testBlockTampering()
     cout << "Running testBlockTampering..." << endl;
 
     // Create a block with valid data
-    Blocks block(3, "Initial Data", "67890");
+    Block block(3, "Initial Data", "67890");
 
     // Verify that the block is valid initially
     if (!block.isValid()) 
@@ -86,7 +86,7 @@ void testBlockTampering()
     }
 
     // Simulate tampering by creating a new block with altered data
-    Blocks tamperedBlock(3, "Tampered Data", "67890");
+    Block tamperedBlock(3, "Tampered Data", "67890");
 
     // Verify that the tampered block is invalid
     if (tamperedBlock.isValid()) 
@@ -104,10 +104,10 @@ void testPreviousHashLinkage()
     cout << "Running testPreviousHashLinkage..." << endl;
 
     // Create the first block (genesis block)
-    Blocks genesisBlock(0, "Genesis Data", "0000");
+    Block genesisBlock(0, "Genesis Data", "0000");
 
     // Create a second block linked to the first
-    Blocks secondBlock(1, "Second Block Data", genesisBlock.getHash());
+    Block secondBlock(1, "Second Block Data", genesisBlock.getHash());
 
     // Verify that the second block's previous hash matches the first block's hash
     if (secondBlock.getPreviousHash() != genesisBlock.getHash()) 
