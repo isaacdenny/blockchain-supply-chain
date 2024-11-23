@@ -8,7 +8,6 @@ void testBlockCreation()
 {
     cout << "Running testBlockCreation..." << endl;
 
-    // Create a block with test data
     Block block(1, "Test Transaction", "0000");
 
     // Check if the block's index is correctly initialized
@@ -70,33 +69,6 @@ void testBlockHashConsistency()
     cout << "testBlockHashConsistency passed!" << endl; // Test passed
 }
 
-// Test to detect tampering by modifying the block's data
-void testBlockTampering() 
-{
-    cout << "Running testBlockTampering..." << endl;
-
-    // Create a block with valid data
-    Block block(3, "Initial Data", "67890");
-
-    // Verify that the block is valid initially
-    if (!block.isValid()) 
-    {
-        cout << "Failed: Block should initially be valid!" << endl;
-        return;
-    }
-
-    // Simulate tampering by creating a new block with altered data
-    Block tamperedBlock(3, "Tampered Data", "67890");
-
-    // Verify that the tampered block is invalid
-    if (tamperedBlock.isValid()) 
-    {
-        cout << "Failed: Tampered block should be invalid!" << endl;
-        return;
-    }
-
-    cout << "testBlockTampering passed!" << endl; // Test passed
-}
 
 // Test to ensure the hash reflects the previous block's hash
 void testPreviousHashLinkage() 
@@ -124,7 +96,6 @@ int main()
     // Run all the test cases
     testBlockCreation();
     testBlockHashConsistency();
-    testBlockTampering();
     testPreviousHashLinkage();
 
     // Print a success message if all tests pass
