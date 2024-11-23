@@ -4,38 +4,44 @@
 using namespace std;
 
 // Test to verify block creation and attribute initialization
-void testBlockCreation() {
+void testBlockCreation() 
+{
     cout << "Running testBlockCreation..." << endl;
 
     // Create a block with test data
     Blocks block(1, "Test Transaction", "0000");
 
     // Check if the block's index is correctly initialized
-    if (block.getIndex() != 1) {
+    if (block.getIndex() != 1) 
+    {
         cout << "Failed: Block index is incorrect!" << endl;
         return;
     }
 
     // Check if the timestamp is properly generated
-    if (block.getTimestamp().empty()) {
+    if (block.getTimestamp().empty()) 
+    {
         cout << "Failed: Block timestamp is empty!" << endl;
         return;
     }
 
     // Verify that the block's data is stored correctly
-    if (block.getData() != "Test Transaction") {
+    if (block.getData() != "Test Transaction") 
+    {
         cout << "Failed: Block data is incorrect!" << endl;
         return;
     }
 
     // Ensure the previous hash matches the input
-    if (block.getPreviousHash() != "0000") {
+    if (block.getPreviousHash() != "0000") 
+    {
         cout << "Failed: Block previous hash is incorrect!" << endl;
         return;
     }
 
     // Check if the block's hash is generated and not empty
-    if (block.getHash().empty()) {
+    if (block.getHash().empty()) 
+    {
         cout << "Failed: Block hash is empty!" << endl;
         return;
     }
@@ -44,7 +50,8 @@ void testBlockCreation() {
 }
 
 // Test to validate hash consistency
-void testBlockHashConsistency() {
+void testBlockHashConsistency() 
+{
     cout << "Running testBlockHashConsistency..." << endl;
 
     // Create a block with test data
@@ -54,7 +61,8 @@ void testBlockHashConsistency() {
     string initialHash = block.getHash();
 
     // Verify that the hash remains consistent
-    if (initialHash != block.getHash()) {
+    if (initialHash != block.getHash()) 
+    {
         cout << "Failed: Hash is not consistent!" << endl;
         return;
     }
@@ -63,14 +71,16 @@ void testBlockHashConsistency() {
 }
 
 // Test to detect tampering by modifying the block's data
-void testBlockTampering() {
+void testBlockTampering() 
+{
     cout << "Running testBlockTampering..." << endl;
 
     // Create a block with valid data
     Blocks block(3, "Initial Data", "67890");
 
     // Verify that the block is valid initially
-    if (!block.isValid()) {
+    if (!block.isValid()) 
+    {
         cout << "Failed: Block should initially be valid!" << endl;
         return;
     }
@@ -79,7 +89,8 @@ void testBlockTampering() {
     Blocks tamperedBlock(3, "Tampered Data", "67890");
 
     // Verify that the tampered block is invalid
-    if (tamperedBlock.isValid()) {
+    if (tamperedBlock.isValid()) 
+    {
         cout << "Failed: Tampered block should be invalid!" << endl;
         return;
     }
@@ -88,7 +99,8 @@ void testBlockTampering() {
 }
 
 // Test to ensure the hash reflects the previous block's hash
-void testPreviousHashLinkage() {
+void testPreviousHashLinkage() 
+{
     cout << "Running testPreviousHashLinkage..." << endl;
 
     // Create the first block (genesis block)
@@ -98,7 +110,8 @@ void testPreviousHashLinkage() {
     Blocks secondBlock(1, "Second Block Data", genesisBlock.getHash());
 
     // Verify that the second block's previous hash matches the first block's hash
-    if (secondBlock.getPreviousHash() != genesisBlock.getHash()) {
+    if (secondBlock.getPreviousHash() != genesisBlock.getHash()) 
+    {
         cout << "Failed: Previous hash linkage is incorrect!" << endl;
         return;
     }
@@ -106,7 +119,8 @@ void testPreviousHashLinkage() {
     cout << "testPreviousHashLinkage passed!" << endl; // Test passed
 }
 
-int main() {
+int main() 
+{
     // Run all the test cases
     testBlockCreation();
     testBlockHashConsistency();
@@ -115,3 +129,5 @@ int main() {
 
     // Print a success message if all tests pass
     cout << "All tests completed successfully!" << endl;
+}
+// g++ -o test_Blocks Blocks.cpp test_Blocks.cpp -lssl -lcrypto to complile
