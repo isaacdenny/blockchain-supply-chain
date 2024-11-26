@@ -1,6 +1,7 @@
 #ifndef SIMULATOR_H
 #define SIMULATOR_H
 
+#include "BlockChain.h"
 #include "SupplyChainNode.h"
 #include "Product.h"
 #include "Transaction.h"
@@ -15,12 +16,13 @@ using namespace std;
 class SupplyChainController {
 private:
   vector<SupplyChainNode> nodes;
+  Blockchain blockChain;
   // int numThreads - for multithreading later
   // file saveFile - the file for reading the nodes and blockchains
-  // BlockChain blockChain - reference to a blockchain
 public:
   SupplyChainController(int numNodes); // add overload for saved blockchain file
   int getNumNodes() { return nodes.size(); }
+  Blockchain getBlockChain() { return blockChain; }
   vector<SupplyChainNode> getNodes() { return nodes; }
   vector<Product> runSimulation(int numProducts);
   void saveBlocks();
