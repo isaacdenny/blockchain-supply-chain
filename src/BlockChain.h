@@ -32,7 +32,7 @@ public:
     // Manage pending transactions
     std::vector<Transaction> getPendingTransactions() const; // Retrieve pending transactions
     void addTransaction(const Transaction &transaction);      // Add a transaction to the list
-    void createBlockFromPendingTransactions();                // Create a block from pending transactions
+    void createBlock(); // Create a block from pending transactions
 
     //Used for testing isChainValid()
     void tamperBlock(size_t index, const std::string &newData);

@@ -33,7 +33,7 @@ std::vector<Transaction> Blockchain::getPendingTransactions() const {
 
 // Create a block from pending transactions
 // Combines all pending transactions into a single block and clears the pending transactions list.
-void Blockchain::createBlockFromPendingTransactions() {
+void Blockchain::createBlock() {
     std::ostringstream oss;
 
     // Loop through pending transactions and format their data into a string.
@@ -53,7 +53,6 @@ void Blockchain::createBlockFromPendingTransactions() {
 // Add a block to the chain
 // Creates a new block with the given data and adds it to the blockchain.
 void Blockchain::addBlock(const std::string &data) {
-    // Retrieve the latest block in the blockchain for reference.
     const Block &lastBlock = getLatestBlock();
 
     // Create a new block with an incremented index, the given data, and the hash of the last block.
