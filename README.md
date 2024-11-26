@@ -1,4 +1,4 @@
-# decentralized-supply-chain
+# blockchain-supply-chain
 A hashing project for CSC2710 - Algorithms that features a decentralized, blockchain supply chain in C++
 
 ## Overview
@@ -91,7 +91,7 @@ Things to add to our project if we have time:
 - blockchain (BlockChain)
 - runSimulation()
 
-#### Blocks
+#### Block
 - timestamp
 - data (Transaction or list of transactions)
 - previousHash (using any commercial)
