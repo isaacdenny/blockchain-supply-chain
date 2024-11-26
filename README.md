@@ -1,4 +1,4 @@
-# decentralized-supply-chain
+# blockchain-supply-chain
 A hashing project for CSC2710 - Algorithms that features a decentralized, blockchain supply chain in C++
 
 ## Overview
@@ -42,12 +42,20 @@ The main file should be responsible for starting up the simulation and taking in
 
 ![More descriptions on process of blockchain](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/blockchain-for-supply-chain.png)
 
+## Project Proposal
+
+- [x] Problem Space - Common supply chain failures and security flaws of centralized data systems
+- [x] Proposed Solution
+      1. Decentralization
+      2. Hashing of id's, transactions, data to be immutable
+- [x] Feasability - Short classes, low functionality to get things working fast
+
 ## MVP
 
 What does our program need to do to?
 
 1. Simulate a supply chain
-2. Generate a blockchain log of each transaction
+2. Generate a blockchain log of each transaction - [Javascript BlockChain Videos](https://www.youtube.com/watch?v=zVqczFZr124&list=PLggJAWhpyrRxKmetiP3RdTa7VAbGaXWub)
 3. Validate the blockchain record (check for data tampering)
 
 ![Simple blockchain supply-chain diagram](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/Blockchain-in-the-supply-chain-2.png)
@@ -62,4 +70,34 @@ Things to add to our project if we have time:
 
 ## Program Design
 
-***TODO***
+### Class Structures
+
+#### Product
+- id (int)
+- nodesVisited (int)
+
+#### Transaction
+- productId (int)
+- nodeFrom (int)
+- nodeTo (int)
+
+#### SupplyChainNode
+- id (int)
+- next (SupplyChainNode*)
+- handleProduct() - returns a transaction
+
+#### SupplyChainController
+- list of nodes (vector SupplyChainNode)
+- blockchain (BlockChain)
+- runSimulation()
+
+#### Block
+- timestamp
+- data (Transaction or list of transactions)
+- previousHash (using any commercial)
+
+#### BlockChain
+- list of blocks (vector Block)
+- list of pending transactions (vector Transaction)
+- addBlock()
+- validateChain()
