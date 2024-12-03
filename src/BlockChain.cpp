@@ -91,11 +91,11 @@ bool Blockchain::isChainValid() const {
 
 // Tamper with a specific block's data
 // Replaces the data of a block at the specified index with new data, for testing purposes.
-void Blockchain::tamperBlock(size_t index, const std::string &newData) {
+void Blockchain::tamperBlock(size_t index, string newData) {
     // Ensure the index is within the valid range.
     if (index < chain.size()) {
         // Replace the block's data with the new data, maintaining the same index and previous hash.
-        chain[index] = Block(chain[index].getIndex(), newData, chain[index].getPreviousHash());
+        chain[index].setData(newData);
     } else {
         // Throw an exception if the index is out of range.
         throw std::out_of_range("Block index out of range");
