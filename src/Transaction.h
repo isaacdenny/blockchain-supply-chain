@@ -8,9 +8,9 @@ private:
   int nodeTo;
 public:
   Transaction(int productId, int nodeFrom, int nodeTo);
-  int getProductId() { return productId; }
-  int getNodeFrom() { return nodeFrom; }
-  int getNodeTo() { return nodeTo; }
+  int getProductId() const { return productId; }
+  int getNodeFrom() const { return nodeFrom; }
+  int getNodeTo() const { return nodeTo; }
 };
 
 #endif

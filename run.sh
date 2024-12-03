@@ -4,7 +4,7 @@
 
 # Set the source files and output binary name
 SOURCE_FILES="src/* "
-TEST_FILE="tests/t1_Blocks.cpp"
+TEST_FILE="tests/t1_SupplyChain2.cpp"
 OUTPUT_BINARY="block_test"
 
 # Compile with g++, link the OpenSSL libraries (ssl and crypto)
