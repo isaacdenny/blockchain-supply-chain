@@ -35,7 +35,7 @@ int main() {
 
     // Create a block from pending transactions
     cout << "\nCreating block from pending transactions...\n";
-    blockchain.createBlockFromPendingTransactions();
+    blockchain.createBlock();
 
     // Display the updated blockchain
     cout << "\nUpdated blockchain state:\n";
@@ -70,7 +70,7 @@ int main() {
     }
 
     cout << "\nCreating another block from pending transactions...\n";
-    blockchain.createBlockFromPendingTransactions();
+    blockchain.createBlock();
 
     // Final state of the blockchain
     cout << "\nFinal blockchain state:\n";

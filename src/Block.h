@@ -29,6 +29,7 @@ public:
   string getPreviousHash() const { return previousHash; }
   string getHash() const { return hash; }
   bool isValid() const;
+  void setData(string data);
 };
 
 #endif

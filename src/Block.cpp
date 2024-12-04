@@ -65,4 +65,9 @@ string Block::calculateHash() const {
   return sha256(input);
 }
 
+void Block::setData(string data)
+{
+  this->data = data;
+}
+
 bool Block::isValid() const { return hash == calculateHash(); }

@@ -35,7 +35,7 @@ public:
     void createBlock(); // Create a block from pending transactions
 
     //Used for testing isChainValid()
-    void tamperBlock(size_t index, const std::string &newData);
+    void tamperBlock(size_t index, string newData);
 
 
 };

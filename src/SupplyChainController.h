@@ -22,7 +22,7 @@ private:
 public:
   SupplyChainController(int numNodes); // add overload for saved blockchain file
   int getNumNodes() { return nodes.size(); }
-  Blockchain getBlockChain() { return blockChain; }
+  Blockchain* getBlockChain() { return &blockChain; }
   vector<SupplyChainNode> getNodes() { return nodes; }
   vector<Product> runSimulation(int numProducts);
   void saveBlocks();
