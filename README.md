@@ -5,7 +5,7 @@ A hashing project for CSC2710 - Algorithms that features a decentralized, blockc
 
 Designing a blockchain-based supply chain traceability system involves creating a decentralized and secure framework where each participant (node) can track the movement and history of goods across various stages in the supply chain. Below is an overview of the key concepts and their role in the project.
 
-We want to create a supply chain simulation that stores its events (i.e. "Product B delivered to Warehouse 334") in decentralized blockchain. The blockchain uses hashing to verify new nodes and chains. 
+We want to create a supply chain simulation that stores its events (i.e. "Product B delivered to Warehouse 334") in a centralized blockchain for simplicity. The blockchain uses hashing to verify new nodes and chains. 
 
 ![Simple blockchain supply-chain diagram](https://github.com/isaacdenny/decentralized-supply-chain/blob/main/research/Blockchain-in-the-supply-chain-2.png)
 
